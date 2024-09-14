@@ -1,23 +1,23 @@
+import { Avatar, AvatarFallback, AvatarImage } from "../ui";
+
 export default function Services() {
   return (
-    <section className="py-16">
-      <h2 className="text-center text-3xl font-semibold mb-10">Services</h2>
-      <div className="flex justify-around">
-        <div className="text-center">
-          <img
-            src="/images/design.png"
-            alt="UIUX Design"
-            className="w-40 h-40 mx-auto"
-          />
-          <h3 className="mt-4 text-xl font-medium">UIUX Design</h3>
+    <section className="border border-black p-9 text-black">
+      <div className="text-left font-bold">Services</div>
+      <div className="flex justify-center items-center space-x-10">
+        <div className="flex flex-col items-center justify-center space-y-3">
+          <Avatar className="w-36 h-36">
+            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          <div>UIUX Design</div>
         </div>
-        <div className="text-center">
-          <img
-            src="/images/frontend.png"
-            alt="Front End Development"
-            className="w-40 h-40 mx-auto"
-          />
-          <h3 className="mt-4 text-xl font-medium">Front End Development</h3>
+        <div className="flex flex-col items-center justify-center space-y-3">
+          <Avatar className="w-36 h-36">
+            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          <div>Front End Development</div>
         </div>
       </div>
     </section>
