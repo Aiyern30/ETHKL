@@ -10,7 +10,7 @@ const StripedBackground = ({
   height = "100%",
 }: StripedBackgroundProps) => (
   <div
-    className="bg-striped h-screen border border-black"
+    className="bg-striped border border-black"
     style={{ height: height, width: width }}
   ></div>
 );
