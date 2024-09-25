@@ -1,6 +1,5 @@
 "use client";
 import { FaMinus } from "react-icons/fa";
-
 import { useState } from "react";
 
 const Header = () => {
@@ -35,13 +34,22 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Desktop Nav */}
       <nav className="hidden lg:flex p-8">
         <ul className="flex flex-col space-y-4 text-xl font-semibold text-right">
           {["Home", "Services", "My Project", "Contact"].map((item, index) => (
-            <li key={index} className="relative group cursor-pointer">
+            <li
+              key={index}
+              className="relative group cursor-pointer text-right"
+            >
               <div className="flex items-center justify-between">
-                <span>{item}</span>
-                <span className="absolute -right-11 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-yellow-400">
+                <a
+                  href={`#${item.replace(" ", "").toLowerCase()}`}
+                  className="transition-all duration-300 group-hover:text-yellow-800 group-hover:underline"
+                >
+                  {item}
+                </a>
+                <span className="absolute -right-11 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-yellow-400 group-hover:text-yellow-800">
                   <FaMinus />
                 </span>
               </div>
@@ -50,6 +58,7 @@ const Header = () => {
         </ul>
       </nav>
 
+      {/* Mobile Menu Toggle */}
       <div className="lg:hidden absolute top-0 right-0 border-l border-b border-black">
         <button
           onClick={toggleMenu}
@@ -59,13 +68,22 @@ const Header = () => {
         </button>
       </div>
 
+      {/* Mobile Nav */}
       {menuOpen && (
         <nav className="lg:hidden absolute top-[72px] right-0 bg-yellow-400 border border-black shadow-md rounded-md p-4">
           <ul className="flex flex-col space-y-4 text-lg font-semibold text-right">
-            <li className="cursor-pointer">Home</li>
-            <li className="cursor-pointer">Services</li>
-            <li className="cursor-pointer">My Project</li>
-            <li className="cursor-pointer">Contact</li>
+            <a href="/">
+              <li className="cursor-pointer">Home</li>
+            </a>
+            <a href="/Services">
+              <li className="cursor-pointer">Services</li>
+            </a>
+            <a href="/Project">
+              <li className="cursor-pointer">My Project</li>
+            </a>
+            <a href="/Contact">
+              <li className="cursor-pointer">Contact</li>
+            </a>
           </ul>
         </nav>
       )}

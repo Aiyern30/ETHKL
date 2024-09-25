@@ -115,7 +115,10 @@ export default function Testing() {
   return (
     <>
       {/* Desktop View */}
-      <div className="hidden lg:grid grid-cols-5 grid-rows-6 h-screen bg-yellow-400">
+      <div
+        id="myproject"
+        className="hidden lg:grid grid-cols-5 grid-rows-6 h-screen bg-yellow-400 text-black"
+      >
         <div className="row-span-2 col-span-2 bg-black">
           <StripedBackground width="100%" height="100%" />
         </div>

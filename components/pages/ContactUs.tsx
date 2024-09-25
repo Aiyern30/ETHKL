@@ -2,7 +2,10 @@ import { Button, Input, Label, Textarea } from "../ui";
 
 export default function ContactUs() {
   return (
-    <section className="border border-black p-9 text-black flex flex-col md:flex-row gap-8">
+    <section
+      id="contact"
+      className="border border-black p-9 text-black flex flex-col md:flex-row gap-8"
+    >
       {/* Left Section */}
       <div className="flex-1">
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
