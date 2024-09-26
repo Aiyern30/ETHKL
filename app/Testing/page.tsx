@@ -8,9 +8,10 @@ const Testing = () => {
   const [walletAddress, setWalletAddress] = useState<string>("");
   const [isConnected, setIsConnected] = useState<boolean>(false);
 
-  const handleWalletConnect = (address: string) => {
+  const handleWalletConnect = (address: string, walletType: string) => {
     setIsConnected(true);
     setWalletAddress(address);
+    console.log("Connected with", walletType, "Wallet:", address);
   };
 
   const handleDisconnectWallet = () => {
