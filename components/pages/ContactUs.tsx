@@ -1,13 +1,32 @@
+import { motion } from "framer-motion";
 import { Button, Input, Label, Textarea } from "../ui";
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
 
 export default function ContactUs() {
   return (
-    <section
+    <motion.section
       id="contact"
       className="border border-black p-9 text-black flex flex-col md:flex-row gap-8"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      transition={{ duration: 0.5 }}
     >
       {/* Left Section */}
-      <div className="flex-1">
+      <motion.div
+        className="flex-1"
+        variants={itemVariants}
+        transition={{ duration: 0.5 }}
+      >
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
         <p className="mb-4">
           I will be more than happy to answer any of your questions or talk with
@@ -15,10 +34,14 @@ export default function ContactUs() {
         </p>
         <p className="mb-2 font-semibold">Email:</p>
         <p className="mb-4">loremipsum@gmail.com</p>
-      </div>
+      </motion.div>
 
       {/* Right Section */}
-      <div className="flex-1">
+      <motion.div
+        className="flex-1"
+        variants={itemVariants}
+        transition={{ duration: 0.5 }}
+      >
         <p className="mb-4">
           I am always looking for great collaborators. Let's message me and make
           something together!
@@ -44,7 +67,7 @@ export default function ContactUs() {
           </div>
           <Button className="w-full sm:w-auto">Contact Me</Button>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
 import {
   DropdownMenu,
@@ -8,16 +10,28 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/Dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface WalletDropdownProps {
   walletAddress: string;
   onDisconnect: () => void;
 }
 
-const WalletDropdown: React.FC<WalletDropdownProps> = ({
+export default function WalletDropdown({
   walletAddress,
   onDisconnect,
-}) => {
+}: WalletDropdownProps) {
+  const menuItems = [
+    { label: "Home", onClick: () => {} },
+    { label: "Profile", onClick: () => {} },
+    { label: "Settings", onClick: () => {} },
+    {
+      label: "Disconnect Wallet",
+      onClick: onDisconnect,
+      className: "text-red-600",
+    },
+  ];
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -27,16 +41,20 @@ const WalletDropdown: React.FC<WalletDropdownProps> = ({
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Navigation</DropdownMenuLabel>
-        <DropdownMenuItem>Home</DropdownMenuItem>
-        <DropdownMenuItem>Profile</DropdownMenuItem>
-        <DropdownMenuItem>Settings</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={onDisconnect} className="text-red-600">
-          Disconnect Wallet
-        </DropdownMenuItem>
+        {menuItems.map((item, index) => (
+          <motion.div
+            key={item.label}
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.2, delay: index * 0.1 }}
+          >
+            <DropdownMenuItem onClick={item.onClick} className={item.className}>
+              {item.label}
+            </DropdownMenuItem>
+          </motion.div>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );
-};
-
-export default WalletDropdown;
+}
