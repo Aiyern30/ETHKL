@@ -43,6 +43,11 @@ export default function Home() {
     projectsInView,
     pricingInView,
     contactInView,
+    headerControls,
+    servicesControls,
+    projectsControls,
+    pricingControls,
+    contactControls,
   ]);
 
   return (

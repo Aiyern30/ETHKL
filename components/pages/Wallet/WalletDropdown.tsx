@@ -22,14 +22,14 @@ const shortenAddress = (address: string) => {
   return `${address.slice(0, 6)}...${address.slice(-6)}`;
 };
 
-const iconVariants = {
-  idle: { rotate: 0 },
-  connecting: {
-    rotate: 360,
-    transition: { duration: 1, repeat: Infinity, ease: "linear" },
-  },
-  connected: { rotate: 0 },
-};
+// const iconVariants = {
+//   idle: { rotate: 0 },
+//   connecting: {
+//     rotate: 360,
+//     transition: { duration: 1, repeat: Infinity, ease: "linear" },
+//   },
+//   connected: { rotate: 0 },
+// };
 
 export default function WalletDropdown({
   walletAddress,

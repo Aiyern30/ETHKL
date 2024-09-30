@@ -28,7 +28,6 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon.png" type="image/png" sizes="16x16" />
-        <link rel="stylesheet" href="" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-yellow-400`}
