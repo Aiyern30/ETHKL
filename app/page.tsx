@@ -47,7 +47,6 @@ export default function Home() {
 
   return (
     <div className="bg-yellow-400 min-h-screen m-10">
-      {/* Header */}
       <motion.div
         ref={headerRef}
         initial="hidden"
@@ -57,7 +56,6 @@ export default function Home() {
         <Header />
       </motion.div>
 
-      {/* Services */}
       <motion.div
         ref={servicesRef}
         initial="hidden"
@@ -67,7 +65,6 @@ export default function Home() {
         <Services />
       </motion.div>
 
-      {/* Projects */}
       <motion.div
         ref={projectsRef}
         initial="hidden"
@@ -77,7 +74,6 @@ export default function Home() {
         <Projects />
       </motion.div>
 
-      {/* Pricing */}
       <motion.div
         ref={pricingRef}
         initial="hidden"
@@ -87,7 +83,6 @@ export default function Home() {
         <Pricing />
       </motion.div>
 
-      {/* Contact Us */}
       <motion.div
         ref={contactRef}
         initial="hidden"
